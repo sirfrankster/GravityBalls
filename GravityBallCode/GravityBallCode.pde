@@ -17,7 +17,7 @@ void setup() {
 
 void draw() {
   //draw background to cover previous frame
-  background(0,255,255);
+  background(0, 255, 255);
 
   //draw ball
   ellipse(x, y, diam, diam);
@@ -28,15 +28,23 @@ void draw() {
   y += velY;
   velY+=earthACC;
 
+
   //bounce ball if it hits walls
-  if (x + diam/2 >= width) {
-    velX = -abs(velX);    //if the ball hits the right wall, assign x velocity the negative version of itself
-  } else if (x - diam/2 <= 0) {
-    velX = abs(velX);     //if the ball hits the left wall, assign x velocity the positive version of itself
+  if (x[i] + diam[i]/2 >= width) {
+    velX[i] = -abs(velX[i]);    //if the ball hits the right wall, assign x velocity the negative version of itself
+  } else if (x[i] - diam[i]/2 <= 0) {
+    velX[i] = abs(velX[i]);     //if the ball hits the left wall, assign x velocity the positive version of itself
   }
-  if (y + diam/2 >= height) {
-    velY = -abs(velY);
-  } else if (y - diam/2 <= 0) {
-    velY = abs(velY);
-  } 
+  if (y[i] + diam[i]/2 >= height) {
+    velY[i] = -abs(velY[i]);
+    y[i] = height - diam[i]/2;
+    if (true);
+    velY[i] = -abs(velY[i]);
+  }
+}
+if (y + diam/2 >= height) {
+  velY = -abs(velY);
+} else if (y - diam/2 <= 0) {
+  velY = abs(velY);
+} 
 }
